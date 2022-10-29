@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "test:ci": "ng test --watch=false --browsers=ChromeHeadless"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +24,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "puppeteer": "^19.2.0",
     "@angular-devkit/build-angular": "^14.2.7",
     "@angular/cli": "~14.2.7",
     "@angular/compiler-cli": "^14.2.0",
