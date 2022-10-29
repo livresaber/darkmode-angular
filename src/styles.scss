@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: Arial;
+  color: var(--color-text);
+  background: var(--color-background);
+  --color-primary: #dd0031;
+  --color-secondary: #34495e;
+}
+
+body.lightmode {
+  --color-text: #222;
+  --color-background: #fff;
+}
+
+body.darkmode {
+  --color-text: #fff;
+  --color-background: #222;
+}
