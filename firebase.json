@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "dist/darkmode-angular",
     "ignore": [
       "firebase.json",
       "**/.*",
