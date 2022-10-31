@@ -16,6 +16,7 @@ export class DarkmodeComponent implements OnInit {
     this.mode = !this.mode
     this.setMode(this.mode)
   }
+
   setMode = (value: boolean) => {
     localStorage.setItem('darkmode', JSON.stringify(value))
 
