@@ -21,18 +21,13 @@ describe('DarkmodeComponent', () => {
   it('should create', async () => {
     expect(component).toBeTruthy();
   });
-  it('should light mode', fakeAsync(async () => {
+  it('should light and dark mode', fakeAsync(() => {
+    const btnMode = fixture.debugElement.query(By.css('.btn-mode')).nativeElement
+
     expect(modeButton()).toBe('LightMode');
     expect(buttonIcon('[aria-label="Icon Light Mode"]')).toBeTruthy();
-  }));
-  it('should dark mode', fakeAsync(async () => {
-    fixture.detectChanges();
-    tick();
 
-    const btnMode = fixture.debugElement.query(By.css('.btn-mode')).nativeElement
     btnMode.dispatchEvent(new Event('click'));
-
-    tick();
 
     expect(modeButton()).toBe('DarkMode');
     expect(buttonIcon('[aria-label="Icon Dark Mode"]')).toBeTruthy();
