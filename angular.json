@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "darkmode-angular:build:production"
+              "buildTarget": "darkmode-angular:build:production"
             },
             "development": {
-              "browserTarget": "darkmode-angular:build:development"
+              "buildTarget": "darkmode-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "darkmode-angular:build"
+            "buildTarget": "darkmode-angular:build"
           }
         },
         "test": {
