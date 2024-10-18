@@ -1,6 +1,5 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-
 import { DarkmodeComponent } from './darkmode-angular.component';
 
 describe('DarkmodeComponent', () => {
@@ -9,51 +8,51 @@ describe('DarkmodeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DarkmodeComponent ]
-    })
-    .compileComponents();
+      imports: [DarkmodeComponent]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(DarkmodeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', async () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should light and dark mode', fakeAsync(() => {
-    const btnMode = fixture.debugElement.query(By.css('.btn-mode')).nativeElement
 
-    expect(modeButton()).toBe('LightMode');
+  it('should toggle light and dark mode', fakeAsync(() => {
+    const btnMode = fixture.debugElement.query(By.css('.btn-mode')).nativeElement;
+
+    // Check initial state (LightMode)
+    expect(modeButtonText()).toBe('LightMode');
     expect(buttonIcon('[aria-label="Icon Light Mode"]')).toBeTruthy();
 
-    btnMode.dispatchEvent(new Event('click'));
+    // Toggle to DarkMode
+    btnMode.click();
+    fixture.detectChanges();
+    tick();
 
-    expect(modeButton()).toBe('DarkMode');
+    expect(modeButtonText()).toBe('DarkMode');
     expect(buttonIcon('[aria-label="Icon Dark Mode"]')).toBeTruthy();
+
+    // Toggle back to LightMode
+    btnMode.click();
+    fixture.detectChanges();
+    tick();
+
+    expect(modeButtonText()).toBe('LightMode');
+    expect(buttonIcon('[aria-label="Icon Light Mode"]')).toBeTruthy();
   }));
 
-  function modeButton() {
+  function modeButtonText(): string {
     fixture.detectChanges();
     tick();
-
-    let result = fixture.debugElement.query(
-      By.css('.btn-mode')
-    ).nativeElement.textContent.trim();
-
-    tick();
-    return result;
+    return fixture.debugElement.query(By.css('.btn-mode')).nativeElement.textContent.trim();
   }
 
-  function buttonIcon(value: string) {
+  function buttonIcon(selector: string): HTMLElement | null {
     fixture.detectChanges();
     tick();
-
-    let result = fixture.debugElement.query(
-      By.css(value)
-    ).nativeElement;
-
-    tick();
-    return result;
+    return fixture.debugElement.query(By.css(selector))?.nativeElement || null;
   }
 });

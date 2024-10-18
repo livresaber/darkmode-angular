@@ -1,7 +1,6 @@
 .btn-mode {
-  background: var(--color-primary);
+  background: var(--primary);
   color: #fff;
-  padding: 1rem;
   border-radius: 50px;
   box-shadow: inset 0 0 0 3px rgba(255,255,255,.2), 0 0 0 5px rgba(0,0,0,.1);
   border: 0;
@@ -9,7 +8,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2rem auto;
+  margin: 2rem 1rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: .6rem;
+  z-index: 11;
+  &.hiddenLabel svg {
+    margin-right: 0;
+  }
 }
 .btn-mode svg {
   margin-right: .5rem;

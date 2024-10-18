@@ -1,12 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'darkmode-angular',
+  selector: 'app-darkmode',
   standalone: true,
-  templateUrl: './darkmode-angular.component.html',
-  styleUrls: ['./darkmode-angular.component.scss']
+  imports: [CommonModule],
+  templateUrl: './darkmode.component.html',
+  styleUrls: ['./darkmode.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class DarkmodeComponent implements OnInit {
+
+  @Input() hiddenLabel: boolean | undefined;
 
   constructor() { }
 
