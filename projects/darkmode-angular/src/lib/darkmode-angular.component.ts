@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-darkmode',
-  templateUrl: './darkmode.component.html',
-  styleUrls: ['./darkmode.component.scss']
+  selector: 'darkmode-angular',
+  templateUrl: './darkmode-angular.component.html',
+  styleUrls: ['./darkmode-angular.component.scss']
 })
 export class DarkmodeComponent implements OnInit {
 

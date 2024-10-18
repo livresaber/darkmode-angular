@@ -4,6 +4,11 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "darkmode-angular": [
+        "./dist/darkmode-angular"
+      ]
+    },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "allowSyntheticDefaultImports": true,

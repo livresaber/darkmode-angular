@@ -1,7 +1,7 @@
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-import { DarkmodeComponent } from './darkmode.component';
+import { DarkmodeComponent } from './darkmode-angular.component';
 
 describe('DarkmodeComponent', () => {
   let component: DarkmodeComponent;

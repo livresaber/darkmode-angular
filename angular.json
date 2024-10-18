@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "darkmode-angular": {
+    "darkmode-angular-spa": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "darkmode-angular:build:production"
+              "buildTarget": "darkmode-angular-spa:build:production"
             },
             "development": {
-              "buildTarget": "darkmode-angular:build:development"
+              "buildTarget": "darkmode-angular-spa:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "darkmode-angular:build"
+            "buildTarget": "darkmode-angular-spa:build"
           }
         },
         "test": {
@@ -99,6 +99,39 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "darkmode-angular": {
+      "projectType": "library",
+      "root": "projects/darkmode-angular",
+      "sourceRoot": "projects/darkmode-angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/darkmode-angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/darkmode-angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/darkmode-angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/darkmode-angular/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         }
       }
