@@ -4,16 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { DarkmodeComponent } from 'projects/darkmode-angular/src/public-api';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    DarkmodeComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, DarkmodeComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

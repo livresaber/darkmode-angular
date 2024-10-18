@@ -2,41 +2,39 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-darkmode',
+  selector: 'darkmode-angular',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './darkmode.component.html',
-  styleUrls: ['./darkmode.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: './darkmode-angular.component.html',
+  styleUrls: ['./darkmode-angular.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class DarkmodeComponent implements OnInit {
-
   @Input() hiddenLabel: boolean | undefined;
 
-  constructor() { }
+  constructor() {}
 
-  modeLocal = localStorage.getItem('darkmode')
-  mode = this.modeLocal == null ? false : JSON.parse(this.modeLocal)
+  modeLocal = localStorage.getItem('darkmode');
+  mode = this.modeLocal == null ? false : JSON.parse(this.modeLocal);
 
   toggleMode = () => {
-    this.mode = !this.mode
-    this.setMode(this.mode)
-  }
+    this.mode = !this.mode;
+    this.setMode(this.mode);
+  };
 
   setMode = (value: boolean) => {
-    localStorage.setItem('darkmode', JSON.stringify(value))
+    localStorage.setItem('darkmode', JSON.stringify(value));
 
-    if(value) {
-      document.body.classList.add('darkmode')
-      document.body.classList.remove('lightmode')
+    if (value) {
+      document.body.classList.add('darkmode');
+      document.body.classList.remove('lightmode');
     } else {
-      document.body.classList.add('lightmode')
-      document.body.classList.remove('darkmode')
+      document.body.classList.add('lightmode');
+      document.body.classList.remove('darkmode');
     }
-  }
+  };
 
   ngOnInit(): void {
-    this.setMode(this.mode)
+    this.setMode(this.mode);
   }
-
 }
