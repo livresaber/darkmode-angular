@@ -1,13 +1,29 @@
 {
   "name": "darkmode-angular",
   "version": "0.1.1",
+  "author": "lucasferreiralimax (https://github.com/lucasferreiralimax)",
+  "repository": "https://github.com/criar-art/darkmode-angular",
+  "bugs": {
+    "url": "https://github.com/criar-art/darkmode-angular/issues"
+  },
+  "homepage": "https://darkmode-angular.web.app",
+  "keywords": [
+    "angular",
+    "components",
+    "darkmode",
+    "ui"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:module": "ng build darkmode-angular && npm run postbuild",
+    "version": "cd projects/darkmode-angular && npm version patch",
+    "publish": "cd dist/darkmode-angular && npm publish",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test:ci": "ng test --watch=false --browsers=ChromeHeadless"
+    "test:ci": "ng test --watch=false --browsers=ChromeHeadless",
+    "postbuild": "node scripts/post-build.js"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +45,7 @@
     "@angular/compiler-cli": "^18.2.2",
     "@types/jasmine": "^5.1.4",
     "jasmine-core": "^5.2.0",
+    "jsonminify": "^0.4.2",
     "karma": "~6.4.3",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.1",
