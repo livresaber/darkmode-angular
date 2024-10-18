@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'darkmode-angular',
+  standalone: true,
   templateUrl: './darkmode-angular.component.html',
   styleUrls: ['./darkmode-angular.component.scss']
 })
