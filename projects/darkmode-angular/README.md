@@ -1,24 +1,78 @@
-# DarkmodeAngular
+# Darkmode Angular Component
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
+The `darkmode-angular` component allows you to easily toggle between light and dark mode in your Angular application. It saves the user's mode preference in `localStorage` and applies the corresponding theme (`lightmode` or `darkmode`) to the `body` tag.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project darkmode-angular` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project darkmode-angular`.
-> Note: Don't forget to add `--project darkmode-angular` or else it will be added to the default project in your `angular.json` file. 
+To install the component, use npm:
 
-## Build
+```bash
+npm install darkmode-angular
+```
 
-Run `ng build darkmode-angular` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Usage
 
-## Publishing
+1. Import the `DarkmodeComponent` into your Angular module or component where you want to use it.
 
-After building your library with `ng build darkmode-angular`, go to the dist folder `cd dist/darkmode-angular` and run `npm publish`.
+   ```typescript
+   import { DarkmodeComponent } from 'darkmode-angular';
+   ```
 
-## Running unit tests
+2. Add the `DarkmodeComponent` to your template.
 
-Run `ng test darkmode-angular` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```html
+   <darkmode-angular [hiddenLabel]="true"></darkmode-angular>
+   ```
 
-## Further help
+   **Inputs:**
+   - `hiddenLabel`: (optional) A `boolean` input that determines if the mode label (e.g., "DarkMode" or "LightMode") should be hidden. Set to `true` to hide the label.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Example
+
+Here’s an example of how you can integrate the `darkmode-angular` component into your Angular app:
+
+1. Import the `DarkmodeComponent` into your module or component.
+
+   ```typescript
+   import { DarkmodeComponent } from 'darkmode-angular';
+
+   @NgModule({
+     declarations: [...],
+     imports: [DarkmodeComponent],
+   })
+   export class AppModule {}
+   ```
+
+2. Use the component in your HTML file.
+
+   ```html
+   <darkmode-angular [hiddenLabel]="false"></darkmode-angular>
+   ```
+
+3. Customize the button by toggling between dark mode and light mode when clicked. The mode is saved in `localStorage` and persists across sessions.
+
+## Styling
+
+The component applies the following classes to the `body` based on the selected mode:
+
+- `darkmode`: Applied when dark mode is active.
+- `lightmode`: Applied when light mode is active.
+
+You can customize the styles for dark and light mode by adding the necessary CSS rules in your global styles file:
+
+```scss
+body.darkmode {
+  background-color: #000;
+  color: #fff;
+}
+
+body.lightmode {
+  background-color: #fff;
+  color: #000;
+}
+```
+
+## API
+
+- `toggleMode()`: Method to toggle between dark and light mode.
+- `setMode(value: boolean)`: Method to set the mode manually. Pass `true` for dark mode and `false` for light mode.
