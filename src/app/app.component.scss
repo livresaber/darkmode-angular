@@ -1,9 +1,8 @@
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  a {
-    text-decoration: none;
-    color: var(--color-text);
-  }
+::ng-deep .content .btn-mode {
+  position: relative !important;
+  z-index: 1;
+}
+
+::ng-deep .btn-mode.hiddenLabel {
+  display: none;
 }
