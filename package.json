@@ -17,13 +17,12 @@
     "ng": "ng",
     "start": "ng serve --no-hmr",
     "build": "ng build",
-    "build:module": "ng build darkmode-angular && npm run postbuild",
+    "build:module": "ng build darkmode-angular && node scripts/post-build.js",
     "version": "cd projects/darkmode-angular && npm version patch",
     "publish": "cd dist/darkmode-angular && npm publish",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test:ci": "ng test --watch=false --browsers=ChromeHeadless",
-    "postbuild": "node scripts/post-build.js"
+    "test:ci": "ng test --watch=false --browsers=ChromeHeadless"
   },
   "private": true,
   "dependencies": {
