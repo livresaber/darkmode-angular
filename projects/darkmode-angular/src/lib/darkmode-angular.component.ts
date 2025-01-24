@@ -2,12 +2,11 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'darkmode-angular',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './darkmode-angular.component.html',
-  styleUrls: ['./darkmode-angular.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+    selector: 'darkmode-angular',
+    imports: [CommonModule],
+    templateUrl: './darkmode-angular.component.html',
+    styleUrls: ['./darkmode-angular.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class DarkmodeComponent implements OnInit {
   @Input() hiddenLabel: boolean | undefined;

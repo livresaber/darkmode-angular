@@ -10,8 +10,8 @@
       ]
     },
     "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
     "strict": true,
-    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -19,7 +19,6 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
