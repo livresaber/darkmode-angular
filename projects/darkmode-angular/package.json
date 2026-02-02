@@ -2,8 +2,8 @@
   "name": "darkmode-angular",
   "version": "1.0.2",
   "peerDependencies": {
-    "@angular/common": "^21.0.0",
-    "@angular/core": "^21.0.0"
+    "@angular/common": "^19.0.0 || ^21.0.0",
+    "@angular/core": "^19.0.0 || ^21.0.0"
   },
   "dependencies": {
     "tslib": "^2.7.0"
