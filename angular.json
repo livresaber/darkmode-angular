@@ -131,11 +131,13 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "tsConfig": "projects/darkmode-angular/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
-            ]
+            ],
+            "tsConfig": "projects/darkmode-angular/tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss"
           }
         }
       }
